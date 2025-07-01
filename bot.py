@@ -3,28 +3,16 @@ import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 
-# Prendi il token da variabile d'ambiente, o metti direttamente qui (non consigliato)
 TOKEN = os.getenv("BOT_TOKEN") or "IL_TUO_TOKEN_TELEGRAM"
 
-# Il tag referral G2A da aggiungere alla fine dei link
 G2A_TAG = "?gtag=347ad30297"
 
-# Mappa piattaforme ai codici G2A usati per ricerca (usiamo query testuale, quindi non filtri)
-PLATFORMS = {
-    "steam": "steam",
-    "ps4": "ps4",
-    "ps5": "ps5",
-    "xbox": "xbox",
-    "pc": "pc"
-}
-
-# Carica catalogo giochi dal file JSON
+# Carica catalogo giochi
 with open("catalogo_giochi.json", encoding="utf-8") as f:
     catalogo = json.load(f)
 
-# Crea la tastiera con le lettere (4 righe x 8 colonne)
 def keyboard_letters():
-    lettere = [chr(i) for i in range(ord('A'), ord('Z')+1)]
+    lettere = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
     keyboard = []
     row = []
     for i, lettera in enumerate(lettere, 1):
@@ -36,7 +24,6 @@ def keyboard_letters():
         keyboard.append(row)
     return InlineKeyboardMarkup(keyboard)
 
-# Crea tastiera con i giochi per una lettera scelta
 def keyboard_games(lettera):
     giochi = catalogo.get(lettera, {})
     keyboard = []
@@ -45,7 +32,6 @@ def keyboard_games(lettera):
     keyboard.append([InlineKeyboardButton("🔙 Torna indietro", callback_data="BACK_LETTERS")])
     return InlineKeyboardMarkup(keyboard)
 
-# Crea tastiera per piattaforme di un gioco
 def keyboard_platforms(gioco):
     piattaforme = []
     for lettera, giochi in catalogo.items():
@@ -64,7 +50,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
-
     data = query.data
 
     if data.startswith("LETTER_"):
@@ -79,12 +64,8 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         parts = data.split("_", 2)
         piattaforma = parts[1]
         gioco = parts[2]
-
-        # Costruiamo il link ricerca generico G2A + tag
-        # Come da tua idea: ricerca "gioco + piattaforma" come query
         query_search = f"{gioco} {piattaforma}".replace(" ", "%20")
         link = f"https://www.g2a.com/it/category/gaming-c1?query={query_search}{G2A_TAG}"
-
         await query.edit_message_text(f"Ecco il link per **{gioco}** su **{piattaforma.upper()}**:\n{link}", parse_mode="Markdown")
 
     elif data == "BACK_LETTERS":
@@ -99,11 +80,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
-
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CallbackQueryHandler(button_handler))
-
     app.run_polling()
 
 if __name__ == "__main__":
