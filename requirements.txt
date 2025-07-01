@@ -1,2 +1,2 @@
 flask
-python-telegram-bot[webhooks]==3.11
+python-telegram-bot[webhooks]==20.3
