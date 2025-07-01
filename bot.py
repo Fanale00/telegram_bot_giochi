@@ -1,13 +1,13 @@
-import json
 import os
+import json
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 
-TOKEN = os.getenv("BOT_TOKEN") or "8144053884:AAFT3lNDRB4_tmyv1ADw38hYxsMHwib_e9U"
+# Prendi il token da variabile ambiente
+TOKEN = os.getenv("BOT_TOKEN")
+G2A_TAG = "gtag=347ad30297"  # senza "?"
 
-G2A_TAG = "gtag=347ad30297"  # senza ?
-
-# Carica catalogo giochi
+# Carica catalogo da file JSON
 with open("catalogo_giochi.json", encoding="utf-8") as f:
     catalogo = json.load(f)
 
@@ -83,7 +83,12 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(CallbackQueryHandler(button_handler))
-    app.run_polling()
+
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=int(os.environ.get("PORT", 8443)),
+        webhook_url="https://TUO_APP.onrender.com/"  # Cambia con il tuo URL Render!
+    )
 
 if __name__ == "__main__":
     main()
