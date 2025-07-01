@@ -1,35 +1,33 @@
 {
   "G": {
-    "God of War (2018)": ["steam", "ps4", "ps5", "pc"],
-    "God of War Ragnarok": ["steam", "ps4", "ps5", "pc"],
-    "Ghost of Tsushima": ["ps4", "ps5", "steam"]
+    "God of War (2018)": ["ps4", "ps5", "pc"],
+    "God of War Ragnarok": ["ps4", "ps5", "pc"],
+    "Ghost of Tsushima": ["ps4", "ps5", "pc"]
   },
   "H": {
-    "Horizon Zero Dawn": ["ps4", "ps5"],
-    "Horizon Forbidden West": ["ps4", "ps5"]
-  },
-  "L": {
-    "Lies of P": ["steam", "ps4", "xbox", "pc"]
-  },
-  "E": {
-    "Elden Ring": ["steam", "ps4", "ps5", "xbox", "pc"]
+    "Horizon Zero Dawn": ["ps4", "pc"],
+    "Horizon Forbidden West": ["ps4", "ps5", "pc"]
   },
   "D": {
-    "Dark Souls": ["ps4", "ps5", "pc"],
-    "Dark Souls II": ["ps4", "ps5", "pc"],
-    "Dark Souls III": ["ps4", "ps5", "pc"],
-    "Death Stranding": ["steam", "ps4", "ps5", "pc"]
+    "Dark Souls": ["pc", "ps4", "ps5", "xbox", "nintendo"],
+    "Dark Souls 2": ["pc", "ps4", "ps5", "xbox"],
+    "Dark Souls 3": ["pc", "ps4", "ps5", "xbox"],
+    "Death Stranding": ["pc", "ps4", "ps5"]
   },
   "B": {
     "Bloodborne": ["ps4", "ps5"]
   },
   "S": {
-    "Sekiro: Shadows Die Twice": ["steam", "ps4", "ps5", "pc"],
-    "Subnautica": ["steam", "xbox", "pc"],
-    "Subnautica Below Zero": ["steam", "xbox", "pc"],
-    "Schedule 1": ["steam"]
+    "Sekiro: Shadows Die Twice": ["pc", "ps4", "ps5", "xbox"],
+    "Subnautica": ["pc", "ps4", "ps5", "xbox"],
+    "Subnautica: Below Zero": ["pc", "ps4", "ps5", "xbox"],
+    "Schedule 1": ["pc"]
+  },
+  "E": {
+    "Elden Ring": ["pc", "ps4", "ps5", "xbox"],
+    "Elden Ring Nightreign": ["pc", "ps4", "ps5", "xbox"]
   },
   "R": {
-    "Rust": ["steam", "xbox", "pc"]
+    "Rust": ["pc", "ps4", "ps5", "xbox"]
   }
 }
