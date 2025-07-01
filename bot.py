@@ -3,7 +3,7 @@ import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 
-TOKEN = os.getenv("BOT_TOKEN") or "IL_TUO_TOKEN_TELEGRAM"
+TOKEN = os.getenv("BOT_TOKEN") or "8144053884:AAFT3lNDRB4_tmyv1ADw38hYxsMHwib_e9U"
 
 G2A_TAG = "?gtag=347ad30297"
 
