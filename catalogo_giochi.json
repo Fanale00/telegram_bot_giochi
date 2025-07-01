@@ -13,5 +13,23 @@
   },
   "E": {
     "Elden Ring": ["steam", "ps4", "ps5", "xbox", "pc"]
+  },
+  "D": {
+    "Dark Souls": ["ps4", "ps5", "pc"],
+    "Dark Souls II": ["ps4", "ps5", "pc"],
+    "Dark Souls III": ["ps4", "ps5", "pc"],
+    "Death Stranding": ["steam", "ps4", "ps5", "pc"]
+  },
+  "B": {
+    "Bloodborne": ["ps4", "ps5"]
+  },
+  "S": {
+    "Sekiro: Shadows Die Twice": ["steam", "ps4", "ps5", "pc"],
+    "Subnautica": ["steam", "xbox", "pc"],
+    "Subnautica Below Zero": ["steam", "xbox", "pc"],
+    "Schedule 1": ["steam"]
+  },
+  "R": {
+    "Rust": ["steam", "xbox", "pc"]
   }
 }
