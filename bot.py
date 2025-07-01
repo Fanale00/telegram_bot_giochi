@@ -87,7 +87,7 @@ def main():
     app.run_webhook(
         listen="0.0.0.0",
         port=int(os.environ.get("PORT", 8443)),
-        webhook_url="https://TUO_APP.onrender.com/"  # Cambia con il tuo URL Render!
+        webhook_url="https://telegram-bot-giochi.onrender.com/"  # Cambia con il tuo URL Render!
     )
 
 if __name__ == "__main__":
