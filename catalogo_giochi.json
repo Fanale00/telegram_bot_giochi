@@ -1,0 +1,195 @@
+[
+  {
+    "nome": "God of War (2018)",
+    "piattaforme": {
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=God%20of%20War%202018%20PS4&gtag=347ad30297"
+      },
+      "PS5": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=God%20of%20War%202018%20PS5&gtag=347ad30297"
+      },
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=God%20of%20War%202018%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "God of War Ragnarok",
+    "piattaforme": {
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=God%20of%20War%20Ragnarok%20PS4&gtag=347ad30297"
+      },
+      "PS5": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=God%20of%20War%20Ragnarok%20PS5&gtag=347ad30297"
+      },
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=God%20of%20War%20Ragnarok%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Horizon Zero Dawn",
+    "piattaforme": {
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Horizon%20Zero%20Dawn%20PS4&gtag=347ad30297"
+      },
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Horizon%20Zero%20Dawn%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Horizon Forbidden West",
+    "piattaforme": {
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Horizon%20Forbidden%20West%20PS4&gtag=347ad30297"
+      },
+      "PS5": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Horizon%20Forbidden%20West%20PS5&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Dark Souls: Prepare to Die Edition",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20Prepare%20to%20Die%20Edition%20PC&gtag=347ad30297"
+      },
+      "Xbox": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20Prepare%20to%20Die%20Edition%20Xbox&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Dark Souls II",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20II%20PC&gtag=347ad30297"
+      },
+      "Xbox": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20II%20Xbox&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Dark Souls III",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20III%20PC&gtag=347ad30297"
+      },
+      "Xbox": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20III%20Xbox&gtag=347ad30297"
+      },
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Dark%20Souls%20III%20PS4&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Bloodborne",
+    "piattaforme": {
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Bloodborne%20PS4&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Sekiro: Shadows Die Twice",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Sekiro%20Shadows%20Die%20Twice%20PC&gtag=347ad30297"
+      },
+      "Xbox": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Sekiro%20Shadows%20Die%20Twice%20Xbox&gtag=347ad30297"
+      },
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Sekiro%20Shadows%20Die%20Twice%20PS4&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Elden Ring",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Elden%20Ring%20PC&gtag=347ad30297"
+      },
+      "Xbox": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Elden%20Ring%20Xbox&gtag=347ad30297"
+      },
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Elden%20Ring%20PS4&gtag=347ad30297"
+      },
+      "PS5": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Elden%20Ring%20PS5&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Elden Ring: Night Reign",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Elden%20Ring%20Night%20Reign%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Schedule 1",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Schedule%201%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Rust",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Rust%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Subnautica",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Subnautica%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Subnautica: Below Zero",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Subnautica%20Below%20Zero%20PC&gtag=347ad30297"
+      }
+    }
+  },
+  {
+  "nome": "Ghost of Tsushima",
+  "piattaforme": {
+    "PS4": {
+      "link": "https://www.g2a.com/it/category/gaming-c1?query=Ghost%20of%20Tsushima%20PS4&gtag=347ad30297"
+    },
+    "PS5": {
+      "link": "https://www.g2a.com/it/category/gaming-c1?query=Ghost%20of%20Tsushima%20PS5&gtag=347ad30297"
+    },
+    "PC": {
+      "link": "https://www.g2a.com/it/category/gaming-c1?query=Ghost%20of%20Tsushima%20Steam&gtag=347ad30297"
+      }
+    }
+  },
+  {
+    "nome": "Death Stranding",
+    "piattaforme": {
+      "PC": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Death%20Stranding%20PC&gtag=347ad30297"
+      },
+      "PS4": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Death%20Stranding%20PS4&gtag=347ad30297"
+      },
+      "PS5": {
+        "link": "https://www.g2a.com/it/category/gaming-c1?query=Death%20Stranding%20PS5&gtag=347ad30297"
+      }
+    }
+  }
+]
