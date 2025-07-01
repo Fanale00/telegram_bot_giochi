@@ -1,17 +1,23 @@
 import os
 import json
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
+from flask import Flask, request, Response
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, Bot
+from telegram.ext import Dispatcher, CommandHandler, CallbackQueryHandler
 
-# Prendi il token da variabile ambiente
 TOKEN = os.getenv("BOT_TOKEN")
-G2A_TAG = "gtag=347ad30297"  # senza "?"
+G2A_TAG = "gtag=347ad30297"
 
-# Carica catalogo da file JSON
 with open("catalogo_giochi.json", encoding="utf-8") as f:
     catalogo = json.load(f)
 
+app = Flask(__name__)
+bot = Bot(token=TOKEN)
+dispatcher = Dispatcher(bot, None, workers=0, use_context=True)
+
+# Inserisci qui i tuoi handler come prima, per esempio start, button_handler ecc.
+
 def keyboard_letters():
+    # ... (tua funzione come prima)
     lettere = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
     keyboard = []
     row = []
@@ -44,10 +50,15 @@ def keyboard_platforms(gioco):
     keyboard.append([InlineKeyboardButton("🔙 Torna indietro", callback_data=f"BACK_GAMES_{gioco[0].upper()}")])
     return InlineKeyboardMarkup(keyboard)
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+from telegram.ext import CallbackContext
+
+async def start(update, context):
     await update.message.reply_text("Ciao! Scegli una lettera:", reply_markup=keyboard_letters())
 
-async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def help_command(update, context):
+    await update.message.reply_text("Usa /start per iniziare.")
+
+async def button_handler(update, context):
     query = update.callback_query
     await query.answer()
     data = query.data
@@ -75,20 +86,26 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         lettera = data[-1]
         await query.edit_message_text(f"Hai scelto la lettera {lettera}. Scegli un gioco:", reply_markup=keyboard_games(lettera))
 
-async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Usa /start per iniziare.")
+from telegram import Update
+from telegram.ext import ApplicationBuilder
 
-def main():
-    app = ApplicationBuilder().token(TOKEN).build()
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("help", help_command))
-    app.add_handler(CallbackQueryHandler(button_handler))
+# Registra gli handler nel dispatcher
+dispatcher.add_handler(CommandHandler("start", start))
+dispatcher.add_handler(CommandHandler("help", help_command))
+dispatcher.add_handler(CallbackQueryHandler(button_handler))
 
-    app.run_webhook(
-        listen="0.0.0.0",
-        port=int(os.environ.get("PORT", 8443)),
-        webhook_url="https://telegram-bot-giochi.onrender.com/"  # Cambia con il tuo URL Render!
-    )
+# Endpoint per Telegram webhook
+@app.route('/', methods=['POST'])
+def webhook():
+    update = Update.de_json(request.get_json(force=True), bot)
+    dispatcher.process_update(update)
+    return Response('ok', status=200)
 
-if __name__ == "__main__":
-    main()
+# Endpoint health check
+@app.route('/health', methods=['GET'])
+def health():
+    return "OK", 200
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8443))
+    app.run(host='0.0.0.0', port=port)
