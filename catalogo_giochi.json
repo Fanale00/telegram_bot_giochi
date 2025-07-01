@@ -19,8 +19,8 @@
   },
   "S": {
     "Sekiro: Shadows Die Twice": ["pc", "ps4", "ps5", "xbox"],
-    "Subnautica": ["pc", "ps4", "ps5", "xbox"],
-    "Subnautica: Below Zero": ["pc", "ps4", "ps5", "xbox"],
+    "Subnautica": ["pc"],
+    "Subnautica: Below Zero": ["pc", "xbox"],
     "Schedule 1": ["pc"]
   },
   "E": {
