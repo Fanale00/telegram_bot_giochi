@@ -65,7 +65,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         piattaforma = parts[1]
         gioco = parts[2]
         query_search = f"{gioco} {piattaforma}".replace(" ", "%20")
-        link = f"https://www.g2a.com/it/category/gaming-c1?query={query_search}{G2A_TAG}"
+        link = f"https://www.g2a.com/it/category/gaming-c1?query={query_search}&gtag=347ad30297"
         await query.edit_message_text(f"Ecco il link per **{gioco}** su **{piattaforma.upper()}**:\n{link}", parse_mode="Markdown")
 
     elif data == "BACK_LETTERS":
