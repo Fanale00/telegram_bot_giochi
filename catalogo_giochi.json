@@ -1,33 +1,69 @@
 {
-  "G": {
-    "God of War (2018)": ["ps4", "ps5", "pc"],
-    "God of War Ragnarok": ["ps4", "ps5", "pc"],
-    "Ghost of Tsushima": ["ps4", "ps5", "pc"]
-  },
-  "H": {
-    "Horizon Zero Dawn": ["ps4", "pc"],
-    "Horizon Forbidden West": ["ps4", "ps5", "pc"]
-  },
-  "D": {
-    "Dark Souls": ["pc", "ps4", "ps5", "xbox", "nintendo"],
-    "Dark Souls 2": ["pc", "ps4", "ps5", "xbox"],
-    "Dark Souls 3": ["pc", "ps4", "ps5", "xbox"],
-    "Death Stranding": ["pc", "ps4", "ps5"]
-  },
   "B": {
+    "Bioshock 2": ["pc", "xbox"],
+    "Bioshock Infinite": ["pc", "xbox"],
+    "Bioshock Remastered": ["pc", "xbox"],
+    "Bioshock: The Collection": ["pc", "xbox", "switch"],
     "Bloodborne": ["ps4", "ps5"]
   },
-  "S": {
-    "Sekiro: Shadows Die Twice": ["pc", "ps4", "ps5", "xbox"],
-    "Subnautica": ["pc"],
-    "Subnautica: Below Zero": ["pc", "xbox"],
-    "Schedule 1": ["pc"]
+  "C": {
+    "Control": ["pc", "ps4", "ps5", "xbox"],
+    "Cyberpunk 2077": ["pc", "ps4", "ps5", "xbox"]
+  },
+  "D": {
+    "Dark Souls": ["pc", "ps4", "ps5", "xbox", "switch"],
+    "Dark Souls 2": ["pc", "ps4", "ps5", "xbox"],
+    "Dark Souls 3": ["pc", "ps4", "ps5", "xbox"],
+    "Darkest Dungeon": ["pc", "ps4", "switch", "xbox"],
+    "Death Stranding": ["pc", "ps4", "ps5"],
+    "Deathloop": ["pc", "ps5"],
+    "Death’s Door": ["pc", "xbox", "switch", "ps4", "ps5"],
+    "Doom Eternal": ["pc", "ps4", "ps5", "xbox", "switch"]
   },
   "E": {
     "Elden Ring": ["pc", "ps4", "ps5", "xbox"],
     "Elden Ring Nightreign": ["pc", "ps4", "ps5", "xbox"]
   },
+  "F": {
+    "Far Cry 3": ["pc", "xbox"],
+    "Far Cry 5": ["pc", "xbox", "ps4"],
+    "Far Cry 6": ["pc", "xbox", "ps4", "ps5"],
+    "Far Cry New Dawn": ["pc", "xbox", "ps4"],
+    "Final Fantasy VII Remake": ["ps4", "ps5", "pc"]
+  },
+  "G": {
+    "Ghost of Tsushima": ["ps4", "ps5", "pc"],
+    "Ghostrunner": ["pc", "ps4", "ps5", "xbox"],
+    "God of War (2018)": ["ps4", "ps5", "pc"],
+    "God of War Ragnarok": ["ps4", "ps5", "pc"],
+    "Godfall": ["ps5", "pc"]
+  },
+  "H": {
+    "Hitman 3": ["pc", "ps4", "ps5", "xbox"],
+    "Horizon Forbidden West": ["ps4", "ps5", "pc"],
+    "Horizon Zero Dawn": ["ps4", "pc"]
+  },
+  "M": {
+    "Metro Exodus": ["pc", "ps4", "ps5", "xbox"],
+    "Monster Hunter Rise": ["pc", "switch"]
+  },
+  "N": {
+    "Nioh": ["pc"],
+    "Nioh 2": ["pc", "ps4", "ps5"],
+    "Nioh The Collection": ["ps5"]
+  },
   "R": {
+    "Resident Evil Village": ["pc", "ps4", "ps5", "xbox"],
     "Rust": ["pc", "ps4", "ps5", "xbox"]
+  },
+  "S": {
+    "Schedule 1": ["pc"],
+    "Sekiro: Shadows Die Twice": ["pc", "ps4", "ps5", "xbox"],
+    "Subnautica": ["pc"],
+    "Subnautica: Below Zero": ["pc", "xbox"]
+  },
+  "T": {
+    "The Last of Us": ["ps5", "pc"],
+    "The Last of Us Part II": ["pc", "ps4", "ps5"]
   }
 }
