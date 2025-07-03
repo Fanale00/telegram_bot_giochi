@@ -5,7 +5,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 
 # Prendi il token da variabile ambiente
 TOKEN = os.getenv("BOT_TOKEN")
-G2A_TAG = "gtag=347ad30297"  # Inserisci il tuo tag affiliato G2A
+G2A_TAG = "gtag=347ad30297"
 
 # Carica catalogo da file JSON
 with open("catalogo_giochi.json", encoding="utf-8") as f:
@@ -52,7 +52,17 @@ def keyboard_platforms(gioco):
     keyboard = []
     for p in piattaforme:
         keyboard.append([InlineKeyboardButton(p.upper(), callback_data=f"PLAT_{p}_{gioco}")])
-    keyboard.append([InlineKeyboardButton("🔙 Torna indietro", callback_data=f"BACK_GAMES_{gioco[0].upper()}")])
+    keyboard.append([InlineKeyboardButton("🔙 Torna indietro", callback_data="BACK_FROM_PLATFORM")])
+    return InlineKeyboardMarkup(keyboard)
+
+# Tastiera con tutti i giochi cliccabili
+def keyboard_all_games():
+    keyboard = []
+    for lettera in sorted(catalogo):
+        giochi = catalogo[lettera]
+        for gioco in giochi:
+            keyboard.append([InlineKeyboardButton(f"{gioco}", callback_data=f"GAME_{gioco}")])
+    keyboard.append([InlineKeyboardButton("🔙 Torna al menu iniziale", callback_data="BACK_TO_MENU")])
     return InlineKeyboardMarkup(keyboard)
 
 # /start
@@ -63,7 +73,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Usa /start per iniziare a cercare giochi su G2A.")
 
-# Gestore pulsanti
+# Gestione pulsanti
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -73,13 +83,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text("Scegli una lettera:", reply_markup=keyboard_letters())
 
     elif data == "SHOW_ALL":
-        text = "📚 Ecco l'intero catalogo giochi:\n\n"
-        for lettera in sorted(catalogo):
-            text += f"🔠 *{lettera}*\n"
-            for gioco in catalogo[lettera]:
-                text += f"• {gioco}\n"
-            text += "\n"
-        await query.edit_message_text(text, parse_mode="Markdown")
+        await query.edit_message_text("📚 Ecco tutti i giochi disponibili:", reply_markup=keyboard_all_games())
 
     elif data.startswith("LETTER_"):
         lettera = data.split("_")[1]
@@ -103,11 +107,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif data == "BACK_LETTERS":
         await query.edit_message_text("Scegli una lettera:", reply_markup=keyboard_letters())
 
-    elif data.startswith("BACK_GAMES_"):
-        lettera = data[-1]
-        await query.edit_message_text(f"Hai scelto la lettera {lettera}. Scegli un gioco:", reply_markup=keyboard_games(lettera))
+    elif data == "BACK_TO_MENU":
+        await query.edit_message_text("Benvenuto! Cosa vuoi fare?", reply_markup=keyboard_start())
 
-# Avvia bot
+    elif data == "BACK_FROM_PLATFORM":
+        await query.edit_message_text("🔙 Torna al catalogo:", reply_markup=keyboard_all_games())
+
+# Avvio del bot
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
@@ -117,7 +123,7 @@ def main():
     app.run_webhook(
         listen="0.0.0.0",
         port=int(os.environ.get("PORT", 8443)),
-        webhook_url="https://telegram-bot-giochi.onrender.com/"  # Cambia con il tuo dominio Render
+        webhook_url="https://telegram-bot-giochi.onrender.com/"  # Cambia con il tuo dominio
     )
 
 if __name__ == "__main__":
